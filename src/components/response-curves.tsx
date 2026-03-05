@@ -170,9 +170,9 @@ export function ResponseCurves({ channels }: ResponseCurvesProps) {
                 borderRadius: 8,
                 fontSize: 11,
               }}
-              formatter={(value: number | undefined, name: string) => {
+              formatter={(value: number | undefined, name: string | undefined) => {
                 const ch = channels.find((c) => c.id === name);
-                return [formatImpressions(value ?? 0), ch?.name ?? name];
+                return [formatImpressions(value ?? 0), ch?.name ?? name ?? ""];
               }}
               labelFormatter={(v) => `Budget: ${v}`}
             />
