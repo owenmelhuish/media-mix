@@ -16,9 +16,9 @@ export function BudgetDisplay({ totalBudget, allocated }: BudgetDisplayProps) {
         key={totalBudget}
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
-        className="mt-1 text-5xl font-bold tracking-tighter"
+        className="mt-1 text-3xl font-bold tracking-tighter"
       >
-        {formatCurrency(totalBudget)}
+        ${totalBudget.toLocaleString()}
       </motion.span>
 
       {/* Right-side curly brace connector */}

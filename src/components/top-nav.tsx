@@ -58,7 +58,7 @@ export function TopNav() {
         >
           {theme === "light" ? <Moon size={18} /> : <Sun size={18} />}
         </button>
-        <div className="ml-2 h-9 w-9 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 ring-2 ring-white" />
+        <div className="ml-2 h-9 w-9 rounded-full bg-gradient-to-br from-purple-400 to-purple-600 ring-2 ring-white" />
       </div>
     </header>
   );

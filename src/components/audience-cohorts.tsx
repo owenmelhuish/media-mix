@@ -20,7 +20,7 @@ const cohorts: Cohort[] = [
 
 const totals = { estSize: "~44.4M", pctOfTarget: "80.4%", male: "~28.9M", female: "~15.6M" };
 
-const barColors = ["#3b82f6", "#0ea5e9", "#6366f1", "#8b5cf6"];
+const barColors = ["#7c3aed", "#9333ea", "#a855f7", "#c084fc"];
 
 export function AudienceCohorts() {
   return (
@@ -61,7 +61,7 @@ export function AudienceCohorts() {
               style={{ background: barColors[i] }}
               title={`${c.name}: ${c.pctOfTarget}`}
             >
-              {pct > 18 ? c.name : ""}
+              {c.name}
             </motion.div>
           );
         })}
@@ -71,7 +71,7 @@ export function AudienceCohorts() {
       <div className="rounded-lg overflow-hidden border border-border/50">
         <table className="w-full text-sm">
           <thead>
-            <tr className="bg-gradient-to-r from-slate-600 to-slate-700 text-white">
+            <tr className="bg-purple-600 text-white">
               <th className="px-3 py-2 text-left text-xs font-semibold">Cohort</th>
               <th className="px-3 py-2 text-right text-xs font-semibold">Est. Size</th>
               <th className="px-3 py-2 text-right text-xs font-semibold">% of Target</th>

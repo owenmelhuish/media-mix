@@ -360,7 +360,7 @@ export function AllocationChart({ channels }: AllocationChartProps) {
                 <div className="mb-3">
                   <h4 className="text-base font-bold leading-tight">Deep Water — Media Mix Overview</h4>
                   <span className="text-[10px] font-semibold text-purple-600 uppercase tracking-wider">
-                    Campaign Inputs
+                    Campaign Inputs Summary
                   </span>
                 </div>
 
@@ -380,10 +380,10 @@ export function AllocationChart({ channels }: AllocationChartProps) {
 
                   <DetailRow label="Flighting">
                     <ul className="list-disc list-outside ml-3.5 space-y-0.5">
-                      <li><strong>Phase 1</strong> (3/23 – 4/5) — Seed awareness, 3% of budget</li>
-                      <li><strong>Phase 2</strong> (4/6 – 4/19) — Amplify reach & frequency, 25% of budget</li>
-                      <li><strong>Phase 3</strong> (4/20 – 5/3) — Opening weekend blitz, 69% of budget</li>
-                      <li><strong>Phase 4</strong> (6/15 – 6/28) — PVOD support, 3% of budget</li>
+                      <li><strong>Phase 1</strong> (3/23 – 4/5) — Seed awareness</li>
+                      <li><strong>Phase 2</strong> (4/6 – 4/19) — Amplify reach & frequency</li>
+                      <li><strong>Phase 3</strong> (4/20 – 5/3) — Opening weekend blitz</li>
+                      <li><strong>Phase 4</strong> (6/15 – 6/28) — PVOD support</li>
                     </ul>
                   </DetailRow>
 
@@ -401,7 +401,7 @@ export function AllocationChart({ channels }: AllocationChartProps) {
                     <ul className="list-disc list-outside ml-3.5 space-y-0.5">
                       <li>National TV & streaming footprint</li>
                       <li>OOH concentrated in NY and LA (top movie-going markets)</li>
-                      <li>Digital nationwide with geo-targeting for top DMAs</li>
+                      <li>Digital nationwide</li>
                     </ul>
                   </DetailRow>
 
@@ -409,18 +409,21 @@ export function AllocationChart({ channels }: AllocationChartProps) {
                     <ul className="list-disc list-outside ml-3.5 space-y-0.5">
                       <li>Linear TV + Streaming as reach backbone with ACR retargeting</li>
                       <li>Social (Meta + TikTok + Reddit) for engagement and frequency building</li>
-                      <li>YouTube for cost-efficient video views and Masthead impact</li>
-                      <li>Direct Partnerships (IMDb, Fandango, Fandom) for point-of-purchase conversion</li>
+                      <li>YouTube for cost-efficient video views</li>
+                      <li>Direct Partnerships (IMDb, Fandango, Fandom) for point-of-purchase conversion and community engagement</li>
                       <li>OOH for cultural impact in key theatrical markets</li>
-                      <li>CTV (LG Ads) for homepage high-impact placements</li>
+                      <li>CTV (LG Ads, Fandango integration to track point of purchase conversion) for homepage high-impact placements</li>
                       <li>Search for intent capture across branded and nonbranded keywords</li>
                     </ul>
                   </DetailRow>
 
                 </div>
 
-                <div className="mt-3 pt-3 border-t border-border/30">
-                  <p className="text-[10px] text-muted-foreground/60 text-center">
+                <div className="mt-3 pt-3 border-t border-border/30 text-center">
+                  <button className="text-sm font-medium text-muted-foreground/50 hover:text-muted-foreground transition-colors tracking-widest">
+                    [...]
+                  </button>
+                  <p className="text-[10px] text-muted-foreground/60 mt-2">
                     Click a channel segment to view detailed KPIs, approach, and estimates
                   </p>
                 </div>

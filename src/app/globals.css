@@ -33,15 +33,16 @@ body {
 }
 
 :root.dark {
-  --color-background: #0f0f1a;
-  --color-foreground: #e8e8f0;
-  --color-card: #1a1a2e;
-  --color-card-foreground: #e8e8f0;
-  --color-muted: #1e1e35;
-  --color-muted-foreground: #9ca3af;
-  --color-border: #2d2d4a;
-  --color-dark-card: #12121f;
-  --color-dark-card-foreground: #ffffff;
+  --color-background: #111518;
+  --color-foreground: #e2e8f0;
+  --color-card: #1a1f23;
+  --color-card-foreground: #e2e8f0;
+  --color-muted: #1e2428;
+  --color-muted-foreground: #7a8a97;
+  --color-border: #2a3238;
+  --color-accent: #3ecfa5;
+  --color-dark-card: #151a1e;
+  --color-dark-card-foreground: #e2e8f0;
 }
 
 /* Custom scrollbar */
@@ -76,35 +77,52 @@ body {
 }
 
 :root.dark .glass {
-  background: rgba(26, 26, 46, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(26, 31, 35, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 :root.dark .glass-dark {
-  background: rgba(15, 15, 26, 0.92);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(21, 26, 30, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.04);
 }
 
 :root.dark ::-webkit-scrollbar-thumb {
-  background: #3d3d5c;
+  background: #2a3238;
 }
 :root.dark ::-webkit-scrollbar-thumb:hover {
-  background: #5a5a80;
+  background: #3a4a54;
 }
 
 /* Dark mode overrides for common patterns */
-:root.dark .bg-white { background: #1a1a2e !important; }
-:root.dark .bg-white\/60 { background: rgba(26, 26, 46, 0.6) !important; }
-:root.dark .bg-white\/40 { background: rgba(26, 26, 46, 0.4) !important; }
-:root.dark .bg-gray-50 { background: #1e1e35 !important; }
-:root.dark .bg-muted\/50 { background: rgba(30, 30, 53, 0.5) !important; }
-:root.dark .shadow-sm { box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important; }
-:root.dark .ring-white { --tw-ring-color: #1a1a2e !important; }
-:root.dark .ring-border { --tw-ring-color: #2d2d4a !important; }
-:root.dark .border-border\/30 { border-color: rgba(45, 45, 74, 0.3) !important; }
-:root.dark .border-border\/50 { border-color: rgba(45, 45, 74, 0.5) !important; }
-:root.dark .text-\[\#1a1a2e\] { color: #e8e8f0 !important; }
+:root.dark .bg-white { background: #1a1f23 !important; }
+:root.dark .bg-white\/60 { background: rgba(26, 31, 35, 0.6) !important; }
+:root.dark .bg-white\/40 { background: rgba(26, 31, 35, 0.4) !important; }
+:root.dark .bg-gray-50 { background: #1e2428 !important; }
+:root.dark .bg-muted\/50 { background: rgba(30, 36, 40, 0.5) !important; }
+:root.dark .shadow-sm { box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5) !important; }
+:root.dark .ring-white { --tw-ring-color: #1a1f23 !important; }
+:root.dark .ring-border { --tw-ring-color: #2a3238 !important; }
+:root.dark .border-border\/30 { border-color: rgba(42, 50, 56, 0.3) !important; }
+:root.dark .border-border\/50 { border-color: rgba(42, 50, 56, 0.5) !important; }
+:root.dark .text-\[\#1a1a2e\] { color: #e2e8f0 !important; }
 :root.dark .dark\:invert { filter: invert(1); }
+
+/* Dark mode purple accents → lighter purple/violet */
+:root.dark .bg-purple-600 { background: #a78bfa !important; color: #111518 !important; }
+:root.dark .bg-purple-500 { background: #a78bfa !important; }
+:root.dark .bg-purple-100 { background: rgba(167, 139, 250, 0.12) !important; }
+:root.dark .text-purple-600 { color: #a78bfa !important; }
+:root.dark .text-purple-700 { color: #a78bfa !important; }
+:root.dark .hover\:bg-purple-200:hover { background: rgba(167, 139, 250, 0.2) !important; }
+:root.dark .bg-foreground { background: #1a1f23 !important; }
+:root.dark .text-foreground\/70 { color: rgba(226, 232, 240, 0.7) !important; }
+:root.dark .text-foreground\/75 { color: rgba(226, 232, 240, 0.75) !important; }
+:root.dark .text-foreground\/80 { color: rgba(226, 232, 240, 0.8) !important; }
+:root.dark .text-foreground\/60 { color: rgba(226, 232, 240, 0.6) !important; }
+
+/* Dark mode chart grid lines */
+:root.dark .recharts-cartesian-grid line { stroke: #2a3238 !important; }
+:root.dark .recharts-cartesian-grid-bg { fill: transparent !important; }
 
 /* Gauge animation */
 @keyframes gauge-fill {

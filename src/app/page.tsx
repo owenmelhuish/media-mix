@@ -47,7 +47,7 @@ export default function Home() {
     "from-emerald-400 to-emerald-600",
     "from-purple-400 to-purple-600",
     "from-red-400 to-red-500",
-    "from-cyan-400 to-sky-500",
+    "from-violet-400 to-violet-500",
     "from-indigo-400 to-indigo-600",
   ];
 
@@ -82,7 +82,7 @@ export default function Home() {
         <section className="glass rounded-[var(--radius-xl)] p-6 mb-6">
           {/* Section Header */}
           <div className="flex items-start justify-between mb-2">
-            <h2 className="text-lg font-semibold">Media Allocation</h2>
+            <h2 className="text-lg font-semibold">Executive Summary</h2>
             <div className="flex items-center gap-2">
               <button className="rounded-lg p-1.5 text-muted-foreground hover:bg-white/60 transition-colors">
                 <Plus size={16} />
