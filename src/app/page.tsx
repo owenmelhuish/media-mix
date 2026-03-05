@@ -19,7 +19,7 @@ export default function Home() {
   const [channels, setChannels] = useState<Channel[]>(defaultChannels);
   const [isSimulating, setIsSimulating] = useState(false);
   const prevMetrics = useRef<{ roas: number; cpm: number; impressions: number } | null>(null);
-  const totalBudget = 9_350_000;
+  const totalBudget = 9_348_550;
 
   const metrics = predictMetrics(channels);
   const allocated = channels.reduce((sum, ch) => sum + ch.spend, 0);

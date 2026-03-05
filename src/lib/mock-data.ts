@@ -6,7 +6,7 @@ export const defaultChannels: Channel[] = [
     name: "Linear TV",
     icon: "linear-tv",
     color: "#1E3A5F",
-    spend: 2805000,       // 30% of $9.35M
+    spend: 3085022,       // 33%
     minSpend: 500000,
     maxSpend: 5000000,
     cpa: 78,
@@ -19,7 +19,7 @@ export const defaultChannels: Channel[] = [
     name: "Streaming",
     icon: "streaming",
     color: "#7C3AED",
-    spend: 1402500,       // 15%
+    spend: 1121826,       // 12%
     minSpend: 200000,
     maxSpend: 3000000,
     cpa: 52,
@@ -32,7 +32,7 @@ export const defaultChannels: Channel[] = [
     name: "OOH",
     icon: "ooh",
     color: "#D97706",
-    spend: 935000,        // 10%
+    spend: 934855,        // 10%
     minSpend: 100000,
     maxSpend: 2000000,
     cpa: 68,
@@ -45,7 +45,7 @@ export const defaultChannels: Channel[] = [
     name: "Social",
     icon: "social",
     color: "#1877F2",
-    spend: 1870000,       // 20%
+    spend: 1869710,       // 20%
     minSpend: 300000,
     maxSpend: 4000000,
     cpa: 35,
@@ -58,7 +58,7 @@ export const defaultChannels: Channel[] = [
     name: "Direct Partnerships",
     icon: "direct",
     color: "#10B981",
-    spend: 467500,        // 5%
+    spend: 467428,        // 5%
     minSpend: 50000,
     maxSpend: 1500000,
     cpa: 18,
@@ -71,7 +71,7 @@ export const defaultChannels: Channel[] = [
     name: "YouTube",
     icon: "youtube",
     color: "#FF0000",
-    spend: 935000,        // 10%
+    spend: 934855,        // 10%
     minSpend: 100000,
     maxSpend: 2500000,
     cpa: 44,
@@ -84,7 +84,7 @@ export const defaultChannels: Channel[] = [
     name: "CTV",
     icon: "ctv",
     color: "#0EA5E9",
-    spend: 748000,        // 8%
+    spend: 747884,        // 8%
     minSpend: 100000,
     maxSpend: 2000000,
     cpa: 58,
@@ -97,7 +97,7 @@ export const defaultChannels: Channel[] = [
     name: "Search",
     icon: "search",
     color: "#EA4335",
-    spend: 187000,        // 2%
+    spend: 186970,        // 2%
     minSpend: 50000,
     maxSpend: 1000000,
     cpa: 32,

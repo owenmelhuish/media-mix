@@ -78,6 +78,32 @@ export function AllocationChart({ channels }: AllocationChartProps) {
 
   const total = channels.reduce((s, c) => s + c.spend, 0);
 
+  /* eslint-disable @typescript-eslint/no-explicit-any */
+  const renderLabel = (props: any) => {
+    const { cx, cy, midAngle, outerRadius, name, percent, index } = props;
+    const RADIAN = Math.PI / 180;
+    const radius = outerRadius + 22;
+    const x = cx + radius * Math.cos(-midAngle * RADIAN);
+    const y = cy + radius * Math.sin(-midAngle * RADIAN);
+    const isActive = activeIndex === index;
+    if (isActive) return null;
+    const pct = (percent * 100).toFixed(0);
+    return (
+      <text
+        x={x}
+        y={y}
+        textAnchor={x > cx ? "start" : "end"}
+        dominantBaseline="central"
+        fontSize={10}
+        fill="var(--color-muted-foreground)"
+        opacity={0.6}
+      >
+        {name} {pct}%
+      </text>
+    );
+  };
+  /* eslint-enable @typescript-eslint/no-explicit-any */
+
   const onPieEnter = useCallback((_: unknown, index: number) => {
     if (!selectedChannel) setActiveIndex(index);
   }, [selectedChannel]);
@@ -154,7 +180,7 @@ export function AllocationChart({ channels }: AllocationChartProps) {
           <div className="mt-3 pt-3 border-t border-border/50 px-2.5">
             <div className="flex justify-between text-xs">
               <span className="text-muted-foreground">Total</span>
-              <span className="font-bold">{formatCurrency(total)}</span>
+              <span className="font-bold">${total.toLocaleString()}</span>
             </div>
           </div>
         </div>
@@ -174,6 +200,8 @@ export function AllocationChart({ channels }: AllocationChartProps) {
                 paddingAngle={2}
                 dataKey="value"
                 strokeWidth={0}
+                label={renderLabel}
+                labelLine={false}
                 onMouseEnter={onPieEnter}
                 onMouseLeave={onPieLeave}
                 onClick={onPieClick}
@@ -324,24 +352,78 @@ export function AllocationChart({ channels }: AllocationChartProps) {
               </motion.div>
             ) : (
               <motion.div
+                key="overview"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="flex flex-col items-center justify-center w-full text-center"
+                className="glass rounded-[var(--radius-xl)] p-5 w-full max-h-[calc(100vh-14rem)] overflow-y-auto"
               >
-                <div className="rounded-2xl bg-muted/50 p-6 mb-3">
-                  <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <circle cx="12" cy="12" r="10"/>
-                    <path d="M12 2a10 10 0 0110 10"/>
-                    <path d="M12 12l6-6"/>
-                    <line x1="12" y1="12" x2="12" y2="2"/>
-                  </svg>
+                <div className="mb-3">
+                  <h4 className="text-base font-bold leading-tight">Deep Water — Media Mix Overview</h4>
+                  <span className="text-[10px] font-semibold text-purple-600 uppercase tracking-wider">
+                    Campaign Inputs
+                  </span>
                 </div>
-                <p className="text-sm font-medium text-muted-foreground">
-                  Click a channel segment to view details
-                </p>
-                <p className="text-xs text-muted-foreground/70 mt-1">
-                  KPIs, approach, timing, creative & estimates
-                </p>
+
+                <div>
+                  <DetailRow label="Objective">
+                    <p className="font-medium">Drive theatrical awareness, ticket sales, and sustained cultural conversation across a 4-phase campaign supporting the May 1 wide release</p>
+                  </DetailRow>
+
+                  <DetailRow label="Audience">
+                    <ul className="list-disc list-outside ml-3.5 space-y-0.5">
+                      <li>Superfans (~9.1M) — High-intent moviegoers, opening weekend buyers</li>
+                      <li>Thrill Seekers (~11.6M) — Action/thriller genre enthusiasts</li>
+                      <li>Big Screen Chasers (~14.6M) — Spectacle-driven, premium format seekers</li>
+                      <li>Adrenaline Athletes (~9.1M) — Sports fans, male-skewing competitive viewers</li>
+                    </ul>
+                  </DetailRow>
+
+                  <DetailRow label="Flighting">
+                    <ul className="list-disc list-outside ml-3.5 space-y-0.5">
+                      <li><strong>Phase 1</strong> (3/23 – 4/5) — Seed awareness, 3% of budget</li>
+                      <li><strong>Phase 2</strong> (4/6 – 4/19) — Amplify reach & frequency, 25% of budget</li>
+                      <li><strong>Phase 3</strong> (4/20 – 5/3) — Opening weekend blitz, 69% of budget</li>
+                      <li><strong>Phase 4</strong> (6/15 – 6/28) — PVOD support, 3% of budget</li>
+                    </ul>
+                  </DetailRow>
+
+                  <DetailRow label="Targeting">
+                    <ul className="list-disc list-outside ml-3.5 space-y-0.5">
+                      <li>Fans of survival thrillers, action films, and cast</li>
+                      <li>Frequent moviegoers and opening weekend buyers</li>
+                      <li>Sports fans (UFC, NBA, live soccer audiences)</li>
+                      <li>Entertainment seekers and pop culture enthusiasts</li>
+                      <li>Retargeting across video viewers, post engagers, and site visitors</li>
+                    </ul>
+                  </DetailRow>
+
+                  <DetailRow label="Markets">
+                    <ul className="list-disc list-outside ml-3.5 space-y-0.5">
+                      <li>National TV & streaming footprint</li>
+                      <li>OOH concentrated in NY and LA (top movie-going markets)</li>
+                      <li>Digital nationwide with geo-targeting for top DMAs</li>
+                    </ul>
+                  </DetailRow>
+
+                  <DetailRow label="Strategy">
+                    <ul className="list-disc list-outside ml-3.5 space-y-0.5">
+                      <li>Linear TV + Streaming as reach backbone with ACR retargeting</li>
+                      <li>Social (Meta + TikTok + Reddit) for engagement and frequency building</li>
+                      <li>YouTube for cost-efficient video views and Masthead impact</li>
+                      <li>Direct Partnerships (IMDb, Fandango, Fandom) for point-of-purchase conversion</li>
+                      <li>OOH for cultural impact in key theatrical markets</li>
+                      <li>CTV (LG Ads) for homepage high-impact placements</li>
+                      <li>Search for intent capture across branded and nonbranded keywords</li>
+                    </ul>
+                  </DetailRow>
+
+                </div>
+
+                <div className="mt-3 pt-3 border-t border-border/30">
+                  <p className="text-[10px] text-muted-foreground/60 text-center">
+                    Click a channel segment to view detailed KPIs, approach, and estimates
+                  </p>
+                </div>
               </motion.div>
             )}
           </AnimatePresence>
